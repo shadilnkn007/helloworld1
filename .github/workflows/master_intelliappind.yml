@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - Intelliappind
+name: Build and deploy PHP app to Azure Web App - intelliappind
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'Intelliappind'
+          app-name: 'intelliappind'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_498C81B9F9E14E73902B24C0F431C241 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DBB0F69E35314C8297315DF37ADE2B57 }}
           package: .
