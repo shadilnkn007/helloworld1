@@ -1,3 +1,3 @@
 <?php
 
-print "This the home page";
+print "This the IND App";
