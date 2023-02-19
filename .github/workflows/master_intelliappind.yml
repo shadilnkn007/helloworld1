@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'intelliappind'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A626AE8CA94A41FD9E6AB9835D91F6E1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6DEEAD460FF344B981C18AA5300E5E9C }}
           package: .
