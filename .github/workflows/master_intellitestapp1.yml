@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'intellitestapp1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_545476BF99864F6E9CA6967AA5B4EDE3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_80CB5C0B985145A0A2B2D0C612F94386 }}
           package: .
