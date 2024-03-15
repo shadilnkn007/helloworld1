@@ -46,7 +46,9 @@ jobs:
     environment:
       name: 'testing'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
@@ -56,6 +58,13 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_17FF55A03334490AAB125206BF976087 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_99D446BE00724B16A5ED8287F2F4C5AE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3D77DEC357EC4F1B904002CFE7C5382F }}
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
@@ -63,4 +72,4 @@ jobs:
           app-name: 'intellitestapp1'
           slot-name: 'testing'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9826E8A0907F4D03989A130B67F0B1AF }}
+          
